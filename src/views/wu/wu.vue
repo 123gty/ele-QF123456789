@@ -1,3 +1,4 @@
+
 <template>
 	<div>
 		<!-- p批量管理 -->
@@ -9,16 +10,18 @@
 				</div>
 			</el-col>
 		</el-row>
-		
+		<!-- 主内荣表格 -->
+		<!-- <el-table ref="multipleTable"  size="mini" :data="tableData" tooltip-effect="dark" style="width: 100%;text-align: center;"
+		 @selection-change="handleSelectionChange" @row-click="handleRowClick"> -->
 		 <el-table :data="tableData" border stripe size="mini" ref="multipleTable" style="width: 100%;margin-top:10px" row-key="id" v-loading="loading"
 		   @selection-change="handleSelectionChange" element-loading-text="'加载中'"  @row-click="handleRowClick">
 			<el-table-column type="selection" />
 			<el-table-column prop="name" label="姓名" />
 			<el-table-column prop="leixing" label="消费方式" />
-			<el-table-column prop="zhanbi" label="消费方式占比" />
+			<el-table-column prop="zhanbi" label="家庭开支占比" />
 			<el-table-column prop="phone" label="联系方式" />
 			<el-table-column prop="xinyong" label="每月消费" />
-			<el-table-column prop="nowtiem" label="时间" width="150"/>
+			<el-table-column prop="nowtiem" label="时间" width="200" />
 			<el-table-column prop="word" label="编码" />
 			<el-table-column label="是否满足" filter-placement="bottom-end">
 				<template slot-scope="scope">
@@ -26,10 +29,10 @@
 				</template>
 			</el-table-column>
 			
-			<el-table-column fixed="right" label="操作" width="150">
+			<el-table-column fixed="right" label="操作" width="200">
 				<template slot-scope="scope">
-					<el-button @click="bianjiedit(scope.row)" type="danger" size="small">编辑</el-button>
-					<el-button @click="shanchudel(scope.row)" type="danger" size="small">删除</el-button>
+					<el-button @click.stop.prevent="bianjiedit(scope.row)" type="primary" size="small">编辑</el-button>
+					<el-button @click.stop.prevent="shanchu(scope.$index)" type="danger" size="small">删除</el-button>
 				</template>
 			</el-table-column>
 		</el-table>
@@ -43,6 +46,7 @@
 	import axios from 'axios'
 	import Mock from 'mockjs'
 	import crypto from 'crypto'//md5加密
+	
 	let aaa = "888888888888"
 	Mock.mock('http://wu.com', {
 		'shuju|56': [{
@@ -50,7 +54,7 @@
 			'leixing|1': ['吃喝玩乐', '衣食住行', '女朋友', '上老下小'], //(随机)4中1
 			"chengnuo|1": ["是", "否"], //(随机)2中1
 			"chuzhi|1": ["false", "true"], //(随机)2中1
-			"xinyong|300-2000": 1000, //(随机)500-1000的数字
+			"xinyong|500-2000": 1000, //(随机)500-1000的数字
 			// "zhanbi": /^(100|[1-9]?\d(\.\d\d?\d?)?)%$|0$/, //(随机)500-1000的数字
 			"zhanbi": /^([1-9]?\d(\.\d?)?)%$/, //(随机)500-1000的数字
 			photo: "@image('100x50', '@hex', '#FFFFFF', 'png', '')", //(随机)图片（宽*高，背景颜色，字体颜色，格式，字）
@@ -98,11 +102,11 @@
 			],
 		},
 		created() {
-			 const md5 = crypto.createHash('md5')
+			const md5 = crypto.createHash('md5')
 				md5.update("panwei19921210")
 				let md5password = md5.digest('hex')
 				console.log(md5password)
-		
+					
 			this.obtainpage()
 		},
 		methods: {
@@ -130,6 +134,10 @@
 				this.page.pageNum = val
 				this.obtainpage()
 			},
+			//编辑
+			bianjiedit(){
+				
+			},
 			//操作多选
 			handleSelectionChange(val) {
 				this.multipleSelection = val;
@@ -139,6 +147,10 @@
 			 handleRowClick(row, column, event){
 			         this.$refs.multipleTable.toggleRowSelection(row);
 			     },
+				 shanchu(index){
+					this.tableData.splice(index,1)
+					this.page.total--
+				 },
 			// 批量删除
 			shanchudel() {
 				for (let i = 0; i <= this.multipleSelection.length - 1; i++) {
