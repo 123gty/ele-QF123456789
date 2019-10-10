@@ -5,6 +5,16 @@
 			<div class="heart center"></div>
 			<div class="heart right side"></div>
 		</div>
+		<div class="chest">
+			<div class="heart left side top"></div>
+			<div class="heart center"></div>
+			<div class="heart right side"></div>
+		</div>
+		<div class="chest">
+			<div class="heart left side top"></div>
+			<div class="heart center"></div>
+			<div class="heart right side"></div>
+		</div>
 
 		<div id="container">
 			<div id="sun"></div>
@@ -17,18 +27,25 @@
 			</div>
 		</div>
 
-		
+		<vueToTop></vueToTop>
 
 	</div>
 </template>
 
 <script>
-	import echarts from 'echarts';
+import Vue from 'vue'
+import vueToTop from 'vue-totop'
+// var vueToTop = require('vue-totop')
+Vue.use(vueToTop)
 	export default {
-		name: 'HelloWorld',
-		props: {
-
+		data(){
+			return {
+				
+			}
 		},
+		// components:{
+		// 	dingbu
+		// },
 		mounted() {
 
 
