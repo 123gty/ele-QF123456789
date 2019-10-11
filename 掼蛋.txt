@@ -2,5 +2,6 @@
         // Paths
         assetsSubDirectory: 'static',
         assetsPubliggcPath: '/',
-        proxyTable: {£¿£¿ccccccccccccccccc
+	ÄãºÃ
+        proxyÄãºÃTable: {£¿£¿ccccccccccccccccc
             '/': { // Ç°¶Ë
