@@ -1,0 +1,6 @@
+   dev: {
+        // Paths
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
+        proxyTable: {
+            '/': { // Ç°¶Ë
