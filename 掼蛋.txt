@@ -1,7 +1,19 @@
    dev: {
         // Paths
         assetsSubDirectory: 'guotianyang',
+         dev: { dev: {
+        // Paths
+        assetsSubDirectory: 'guotianyang',
         assetsPubliggcPath: '/',
+	ÄãºÃ
+        proxyÄãºÃTable: {£¿£¿ccccccccccccccccc
+            '/': { // Ç°¶Ë
+        // Paths
+        assetsSubDirectory: 'guotianyang',
+        assetsPubliggcPath: '/',
+	ÄãºÃ
+        proxyÄãºÃTable: {£¿£¿ccccccccccccccccc
+            '/': { // Ç°¶Ë
 	ÄãºÃ
         proxyÄãºÃTable: {£¿£¿ccccccccccccccccc
             '/': { // Ç°¶Ë
