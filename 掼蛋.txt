@@ -1,1 +1,6 @@
-阿斯顿发送到发
+   dev: {
+        // Paths
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
+        proxyTable: {
+            '/': { // 前端
