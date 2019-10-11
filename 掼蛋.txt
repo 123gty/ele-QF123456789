@@ -1,7 +1,7 @@
    dev: {
         // Paths
-        assetsSubDirectory: 'static',
+        assetsSubDirectory: 'guotianyang',
         assetsPubliggcPath: '/',
-	ÄãºÃ
-        proxyÄãºÃTable: {£¿£¿ccccccccccccccccc
-            '/': { // Ç°¶Ë
+	Ã„Ã£ÂºÃƒ
+        proxyÃ„Ã£ÂºÃƒTable: {Â£Â¿Â£Â¿ccccccccccccccccc
+            '/': { // Ã‡Â°Â¶Ã‹
