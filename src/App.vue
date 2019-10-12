@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav" >
-      <router-link to="/">首页导航</router-link> 
+      <!-- <router-link to="/">首页导航</router-link> -->
       <router-link to="/yi">壹壹壹壹壹</router-link>
 	   <router-link to="/er">贰贰贰贰贰</router-link> 
 	  <router-link to="/san">叁叁叁叁叁</router-link> 
