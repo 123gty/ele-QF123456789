@@ -192,7 +192,7 @@ new CircleScene().run();
 canvas {
   display:block;
   overflow: hidden;
-  background:#000;
+  /* background:#000; */
   cursor:none;
 }
 </style>

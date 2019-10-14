@@ -15,7 +15,7 @@
 			<div class="heart center"></div>
 			<div class="heart right side"></div>
 		</div>
-
+<vueToTop type=8 size=45 class="gg"></vueToTop>
 		<div id="container">
 			<div id="sun"></div>
 			<div class="orbit" id="earth-orbit">
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<vueToTop type=8 size=45 class="gg"></vueToTop>
+		
 <!-- 参数	说明	类型	可选值	默认值
 	type	按钮的类型，一共16种	number	0~15	0
 	top	滚动条离顶部多高时，显示返回顶部按钮	number	大于0的整数	400

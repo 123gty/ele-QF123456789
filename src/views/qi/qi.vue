@@ -75,7 +75,7 @@ LINE.prototype = {
 	LENGTH : 10,
 	RADIUS : 5,
 	INIT_COUNT : 120,
-	GRAVITY : -0.05,
+	GRAVITY : -0.15,
 	RESISTANCE : 0.05,
 	MAX_EXTEND_COUNT : 30,
 	MAX_RIPPLE_COUNT : 50,
@@ -221,6 +221,6 @@ $(function(){
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #111111;
 }
 </style>

@@ -16,7 +16,7 @@
 						<el-input @keyup.enter.native ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
 					</el-form-item>
 					<el-form-item>
-				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">SIGN IN</el-button>
+				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">登入</el-button>
 				  	</el-form-item>
 					<div class="tiparea">
 						<p class="wxtip">温馨提示：</p>
@@ -25,17 +25,7 @@
 					</div>
 					<div class="sanFangArea">
 						<p class="title">第三方账号登录</p>
-						<!-- <ul class="rflex">
-							<li @click="loginByWechat">
-						       <icon-svg icon-class="iconwechat" />
-							</li>
-							<li>
-							    <icon-svg icon-class="iconweibo" />
-							</li>
-							<li>
-							    <icon-svg icon-class="iconGithub" />
-							</li>
-						</ul> -->
+						
 				    </div>
 				</el-form>
 	  		</section>
@@ -46,7 +36,7 @@
 <script>
 	// import logoImg from "@/assets/img/logo.png";//logoImg <icon-svg>
 	// import { login } from "@/api/user";
-    import { setToken } from '@/utils/auth'
+    import { setToken,getToken } from '@/utils/auth'
 	const CryptoJS = require('crypto-js');
 	export default {
 	    data(){
@@ -54,7 +44,7 @@
 				// logo:logoImg,
 				loginForm: {
 					username: '郭某某某某某某',
-					password: 'guoguoguo'
+					password: 'guoguoguo1'
 				},
 				rules: {
 					username: [
@@ -107,6 +97,13 @@
 							console.log(mima)
 							setToken(mima)
 							  this.$router.push({ name: 'yi' });
+							    if (getToken()=="mvsAN47Rso/tk+750W/XKw==") {
+							  		this.$message.success('登入成功')
+							  }else{
+								 this.$message.error('密码错误')
+
+							  }
+							 
 					}
 				});
 			}
@@ -119,6 +116,7 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
+		
 		// background: url(../assets/img/bg9.jpg) no-repeat center center;
 		background-size: 100% 100%;
 	}
@@ -184,11 +182,14 @@
 	
 	.tiparea{
 		text-align:left;
+		
 		font-size: 12px;
 		color: #4cbb15;
 		padding: 10px 0;
 		.tip{
 			margin-left: 54px;
+			user-selete:none;
+
 		}
 		.tips{
 			color:red;
