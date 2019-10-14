@@ -1,5 +1,6 @@
 <template>
 	<div id="hello">
+		<div class="huadong">
 		<div class="chest">
 			<div class="heart left side top"></div>
 			<div class="heart center"></div>
@@ -15,7 +16,6 @@
 			<div class="heart center"></div>
 			<div class="heart right side"></div>
 		</div>
-<vueToTop type=8 size=45 class="gg"></vueToTop>
 		<div id="container">
 			<div id="sun"></div>
 			<div class="orbit" id="earth-orbit">
@@ -26,7 +26,8 @@
 				</div>
 			</div>
 		</div>
-
+		<vueToTop type=8 size=45 class="gg"></vueToTop>
+</div>
 		
 <!-- 参数	说明	类型	可选值	默认值
 	type	按钮的类型，一共16种	number	0~15	0
@@ -52,6 +53,10 @@
 </script>
 
 <style scoped lang="scss">
+	.huadong{
+		overflow: auto;
+		height: 900px;
+	}
 	.chest {
 		width: 500px;
 		height: 500px;
