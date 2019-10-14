@@ -20,8 +20,8 @@
 				  	</el-form-item>
 					<div class="tiparea">
 						<p class="wxtip">温馨提示：</p>
-						<p class="tip">用户名为：admin/editor<span class="tips">(可用于切换权限)</span></p>
-						<p class="tip">密码为：123456</p>
+						<p class="tip">用户名为：郭某某某某某某<span class="tips">(可用于切换权限)</span></p>
+						<p class="tip">密码为：guoguoguo</p>
 					</div>
 					<div class="sanFangArea">
 						<p class="title">第三方账号登录</p>
@@ -47,7 +47,7 @@
 	// import logoImg from "@/assets/img/logo.png";//logoImg <icon-svg>
 	// import { login } from "@/api/user";
     import { setToken } from '@/utils/auth'
-
+	const CryptoJS = require('crypto-js');
 	export default {
 	    data(){
 			return {
@@ -70,6 +70,26 @@
 		mounted(){
 		},
 		methods: {
+			
+			 getAES(data){ //加密
+			    var key  = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';  //密钥
+			    var iv   = '1234567812345678';
+			    var encrypted =this.getAesString(data,key,iv); //密文
+			    var encrypted1 =CryptoJS.enc.Utf8.parse(encrypted);
+			    return encrypted;
+			},
+			 getAesString(data,key,iv){//加密
+			    var key  = CryptoJS.enc.Utf8.parse(key);
+			    var iv   = CryptoJS.enc.Utf8.parse(iv);
+			    var encrypted =CryptoJS.AES.encrypt(data,key,
+			        {
+			            iv:iv,
+			            mode:CryptoJS.mode.CBC,
+			            padding:CryptoJS.pad.Pkcs7
+			        });
+			    return encrypted.toString();    //返回的是base64格式的密文
+			},
+			
 			loginByWechat(){
 			},
 			showMessage(type,message){
@@ -83,8 +103,10 @@
 					if (valid) {
 						let userinfo = this.loginForm;
 							// this.$message.success('添加成功')
-
-							setToken(this.loginForm.password)
+							var mima = this.getAES(this.loginForm.password)
+							console.log(mima)
+							setToken(mima)
+							  this.$router.push({ name: 'yi' });
 					}
 				});
 			}

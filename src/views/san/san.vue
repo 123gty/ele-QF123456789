@@ -29,40 +29,29 @@
 
 		<vueToTop type=8 size=45 class="gg"></vueToTop>
 <!-- 参数	说明	类型	可选值	默认值
-type	按钮的类型，一共16种	number	0~15	0
-top	滚动条离顶部多高时，显示返回顶部按钮	number	大于0的整数	400
-right	按钮右部定位位置	number	大于0的整数	30
-bottom	按钮底部定位位置	number	大于0的整数	30
-size	按钮大小	number	大于0的整数	24
-color	按钮颜色	string	rgb/hex	'#666'
-duration	返回顶部的间隔时间	number	大于0的整数	300 -->
+	type	按钮的类型，一共16种	number	0~15	0
+	top	滚动条离顶部多高时，显示返回顶部按钮	number	大于0的整数	400
+	right	按钮右部定位位置	number	大于0的整数	30
+	bottom	按钮底部定位位置	number	大于0的整数	30
+	size	按钮大小	number	大于0的整数	24
+	color	按钮颜色	string	rgb/hex	'#666'
+	duration	返回顶部的间隔时间	number	大于0的整数	300 -->
 	</div>
 </template>
 
 <script>
-import Vue from 'vue'
-import vueToTop from 'vue-totop'
-// var vueToTop = require('vue-totop')
-Vue.use(vueToTop)
+	import Vue from 'vue'
+	import vueToTop from 'vue-totop'
+	Vue.use(vueToTop)
 	export default {
-		data(){
-			return {
-				
-			}
+		data() {
+			return {}
 		},
-		// components:{
-		// 	dingbu
-		// },
-		mounted() {
-
-
-}
-
+		mounted() {}
 	}
 </script>
 
 <style scoped lang="scss">
-
 	.chest {
 		width: 500px;
 		height: 500px;

@@ -1,95 +1,92 @@
 <template>
-  <div id="app">
-    <div id="nav" >
-      <!-- <router-link to="/">首页导航</router-link> -->
-      <router-link to="/yi">壹壹壹壹壹</router-link>
-	   <router-link to="/er">贰贰贰贰贰</router-link> 
-	  <router-link to="/san">叁叁叁叁叁</router-link> 
-	  <router-link to="/si">肆肆肆肆肆</router-link> 
-      <router-link to="/wu">伍伍伍伍伍</router-link>
-      <router-link to="/liu">陆陆陆陆陆</router-link>
-      <router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
-      <router-link to="/ba">叭叭叭叭叭</router-link>
-	  
-    </div>
-	<div class="you">
-		<router-view/>
+	<div id="app">
+		<div id="nav" v-show="$route.meta.show">
+			<!-- <router-link to="/">首页导航</router-link> -->
+			<router-link to="/yi">壹壹壹壹壹</router-link>
+			<router-link to="/er">贰贰贰贰贰</router-link>
+			<router-link to="/san">叁叁叁叁叁</router-link>
+			<router-link to="/si">肆肆肆肆肆</router-link>
+			<router-link to="/wu">伍伍伍伍伍</router-link>
+			<router-link to="/liu">陆陆陆陆陆</router-link>
+			<router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
+			<router-link to="/ba">叭叭叭叭叭</router-link>
+
+		</div>
+		<div class="you">
+			<router-view />
+		</div>
+
 	</div>
-    
-  </div>
 </template>
 <script>
-	export default{
-		data(){
+	export default {
+		data() {
 			return {
 				screenWidth: document.body.clientWidth
 			}
 		},
-		watch:{
-			screenWidth(){
+		watch: {
+			screenWidth() {
 				console.log(this.screenWidth)
-			// 	var data={
-			// 	    name:'taytay',
-			// 	    sex:'woman',
-			// 	    hobby:'program'
-			// 	};
-			// 	var e=JSON.stringify(data);
-			// 	window.localStorage.setItem("shuju",e);
-			 },
-			
+				// 	var data={
+				// 	    name:'taytay',
+				// 	    sex:'woman',
+				// 	    hobby:'program'
+				// 	};
+				// 	var e=JSON.stringify(data);
+				// 	window.localStorage.setItem("shuju",e);
+			},
+
 		},
-		
+
 	}
-	
 </script>
 
 <style lang="scss" scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  position: absolute;
-  height:99%;
-  width:99%;
-}
-#app{
-	display: flex;
-	 justify-content: space-around;
-	 background: #ededed;
-}
-#nav {
-	
-	display: flex;
-	 min-width:180px;
-	 text-align: center;
-	 box-shadow: inset 0 0 200px rgba(0, 0, 0, .4);
-	flex-direction: column;
-	line-height: 50px;
-	text-align: center;
-  
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-	
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-.you{
-	
-	width:90%;
-}
+	#app {
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		color: #2c3e50;
+		position: absolute;
+		height: 99%;
+		width: 99%;
+	}
 
+	#app {
+		display: flex;
+		justify-content: space-around;
+		background: #ededed;
+	}
+
+	#nav {
+		display: flex;
+		min-width: 180px;
+		text-align: center;
+		box-shadow: inset 0 0 200px rgba(0, 0, 0, .4);
+		flex-direction: column;
+		line-height: 50px;
+		text-align: center;
+		a {
+			font-weight: bold;
+			color: #2c3e50;
+
+			&.router-link-exact-active {
+				color: #42b983;
+			}
+		}
+	}
+	.you {
+		min-width: 90%;
+	}
 </style>
 
 
 <script>
 	export default {
-		data(){
+		data() {
 			return {
-				
+
 			}
 		},
 		mounted() {
@@ -98,6 +95,7 @@
 			var step = 0;
 			var colorIndices = [0, 1, 2, 3];
 			var gradientSpeed = .015;
+
 			function updateGradient() {
 				var c0_0 = colors[colorIndices[0]];
 				var c0_1 = colors[colorIndices[1]];
