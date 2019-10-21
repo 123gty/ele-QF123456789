@@ -1,40 +1,37 @@
 <template>
 	<div id="app">
-		<el-container>
-			<el-header v-show="$route.meta.show">
-				<div class="header" v-show="$route.meta.show">
-					<el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-					 background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+		<header>
+			<div class="header" v-show="$route.meta.show">
+				<el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+				 background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" >
 
-						<el-menu-item index="1"><a> <i class="el-icon-rank" @click='toggleFullScreen'></i></a></el-menu-item>
-						<el-menu-item index="2"><a>订单管理</a></el-menu-item>
-						<el-submenu index="3">
-							<template slot="title">系统操作</template>
-							<el-menu-item index="3-1" @click="zhuxiao">注销退出</el-menu-item>
-							<el-menu-item index="3-2" @click="zhuxiao">更换账号</el-menu-item>
-						</el-submenu>
-					</el-menu>
-				</div>
-			</el-header>
-			<el-container>
-				<el-aside style="width: 200px;" v-show="$route.meta.show" id="side">
-					<div id="nav">
-						<router-link to="/yi">壹壹壹壹壹</router-link>
-						<router-link to="/er">贰贰贰贰贰</router-link>
-						<router-link to="/san">叁叁叁叁叁</router-link>
-						<router-link to="/si">肆肆肆肆肆</router-link>
-						<router-link to="/wu">伍伍伍伍伍</router-link>
-						<router-link to="/liu">陆陆陆陆陆</router-link>
-						<router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
-						<router-link to="/ba">叭叭叭叭叭</router-link>
-					</div>
-				</el-aside>
-				<el-main>
-					<router-view />
-				</el-main>
-			</el-container>
-		</el-container>
-
+					<el-menu-item index="1"><a> <i class="el-icon-rank" @click='toggleFullScreen'></i></a></el-menu-item>
+					<el-menu-item index="2"><a>订单管理</a></el-menu-item>
+					<el-submenu index="3" style='float: right;'>
+						<template slot="title">系统操作</template>
+						<el-menu-item index="3-1" @click="zhuxiao">注销退出</el-menu-item>
+						<el-menu-item index="3-2" @click="zhuxiao">更换账号</el-menu-item>
+					</el-submenu>
+				</el-menu>
+			</div>
+		</header>
+		<aside id="side" v-show="$route.meta.show">
+			<div id="nav">
+				<router-link to="/yi">壹壹壹壹壹</router-link>
+				<router-link to="/er">贰贰贰贰贰</router-link>
+				<router-link to="/san">叁叁叁叁叁</router-link>
+				<router-link to="/si">肆肆肆肆肆</router-link>
+				<router-link to="/wu">伍伍伍伍伍</router-link>
+				<router-link to="/liu">陆陆陆陆陆</router-link>
+				<router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
+				<router-link to="/ba">叭叭叭叭叭</router-link>
+				<router-link to="/jiu">啾啾啾啾啾</router-link>
+			</div>
+		</aside>
+		<main>
+			<router-view />
+		</main>
+	
 	</div>
 </template>
 
@@ -43,77 +40,46 @@
 	::-webkit-scrollbar {
 		border: none;
 	}
-	*{
-		padding: 0;
-		margin: 0;
-	}
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		color: #2c3e50;
-		overflow: hidden;
-	}
-	.el-header,
-	.el-footer {
-		background-color: #B3C0D1;
-		color: #333;
-		padding: 0;
-		text-align: center;
-		line-height: 60px;
-	}
-	.el-aside {
-		// position: absolute;
-		// 		height: 90%;
-		// 		width: 100%;
-		// 		visibility: visible;
-		background-color: #D3DCE6;
-		background-color: rgb(84, 92, 100);
-		color: #333;
-		text-align: center;
-		line-height: 200px;
-
-		&.router-link-exact-active {
-			color: #42b983;
-		}
-	}
-	.el-main {
-		padding: 0;
-		background-color: #E9EEF3;
-		color: #333;
-		text-align: center;
-		overflow: hidden;
-	}
-	.el-container {
-		height: 900px;
+	* {
+		padding:0;
+		margin:0;
 	}
 
-	.el-container:nth-child(5) .el-aside,
-	.el-container:nth-child(6) .el-aside {
-		line-height: 260px;
-	}
-
-	.el-container:nth-child(7) .el-aside {
-		line-height: 320px;
-	}
-
-	#nav {
-		display: flex;
+	header {
 		width: 100%;
-		text-align: center;
-		// box-shadow: inset 0 0 200px rgba(0, 0, 0, .4);
-		flex-direction: column;
-		text-align: center;
-		a {
-			line-height: 50px;
-			font-weight: bold;
-			color: #2c3e50;
+		height: 60px;
+	}
 
-			&.router-link-exact-active {
-				color: #42b983;
+	aside {
+		position: absolute;
+		height: calc(100% - 75px);
+		width: 200px;
+		#nav {
+			display: flex;
+			width: 100%;
+			text-align: center;
+			// box-shadow: inset 0 0 200px rgba(0, 0, 0, .4);
+			flex-direction: column;
+			text-align: center;
+			a {
+				line-height: 50px;
+				font-weight: bold;
+				color: #2c3e50;
+				&.router-link-exact-active {
+					color: #42b983;
+				}
 			}
 		}
 	}
+
+	main {
+		position: absolute;
+		left: 208px;
+		height: calc(100% - 75px);
+		overflow: auto;
+		width: calc(100% - 216px);
+	}
+
 
 </style>
 

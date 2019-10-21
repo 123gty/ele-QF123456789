@@ -53,9 +53,14 @@
 </script>
 
 <style scoped lang="scss">
+	::-webkit-scrollbar {
+		border: none;
+	}
 	.huadong{
+		position: absolute;
 		overflow: auto;
-		height: 900px;
+		height: 100%;
+		width: 100%;
 	}
 	.chest {
 		width: 500px;

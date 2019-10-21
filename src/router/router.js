@@ -8,6 +8,12 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+	  {
+	     path: '*',
+	     name: 'yi',
+	  component: () => import(/* webpackChunkName: "about" */ '../views/yi/yi.vue'),
+	  meta:{show:true}
+	   },
     {
       path: '/login',
       name: 'login',
@@ -65,6 +71,12 @@ export default new Router({
 	  path: '/ba',
 	  name: 'ba',
 	  component: () => import(/* webpackChunkName: "about" */ '../views/ba/ba.vue'),
+	  meta:{show:true}
+
+	},{
+	  path: '/jiu',
+	  name: 'jiu',
+	  component: () => import(/* webpackChunkName: "about" */ '../views/jiu/jiu.vue'),
 	  meta:{show:true}
 
 	}

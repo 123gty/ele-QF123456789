@@ -35,17 +35,12 @@
 </template>
 
 <script>
-	import axios from 'axios'
 
 	const CryptoJS = require('crypto-js');
 	const key = CryptoJS.enc.Utf8.parse("5d85dadfe4b0e2e391c489de"); //十六位十六进制数作为密钥
-	const iv = CryptoJS.enc.Utf8.parse(''); //十六位十六进制数作为密钥偏移量
+	const iv = CryptoJS.enc.Utf8.parse(''); //十六位十六进制数作为密钥偏移量pointerShapeBuilder
 	import echarts from 'echarts';
 	export default {
-		name: 'HelloWorld',
-		props: {
-
-		},
 		data() {
 			return {
 				"shuju": [{
@@ -78,17 +73,7 @@
 				});
 				return encrypted.ciphertext.toString().toUpperCase();
 			},
-			tianjia() { //添加数据
-				axios({
-					method: "post",
-					url: `http://localhost:9090/posts`,
-					data: {
-						shuju: this.shuju
-					}
-				}).then((data) => {
-					console.log(data);
-				})
-			},
+
 
 		},
 		mounted() {
@@ -102,12 +87,6 @@
 					// top:'20%',//标题margin
 				},
 				color: colors,
-				tooltip: {
-					trigger: 'axis',
-					axisPointer: {
-						type: 'bar'
-					}
-				},
 				grid: {
 					right: '10%',
 					left: '20%',
