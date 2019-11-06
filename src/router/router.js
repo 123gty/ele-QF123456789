@@ -10,8 +10,8 @@ export default new Router({
   routes: [
 	  {
 	     path: '*',
-	     name: 'yi',
-	  component: () => import(/* webpackChunkName: "about" */ '../views/yi/yi.vue'),
+	     name: 'shi',
+	  component: () => import(/* webpackChunkName: "about" */ '../views/shi/shi.vue'),
 	  meta:{show:true}
 	   },
     {
@@ -78,7 +78,11 @@ export default new Router({
 	  name: 'jiu',
 	  component: () => import(/* webpackChunkName: "about" */ '../views/jiu/jiu.vue'),
 	  meta:{show:true}
-
+	},{
+	  path: '/shi',
+	  name: 'shi',
+	  component: () => import(/* webpackChunkName: "about" */ '../views/shi/shi.vue'),
+	  meta:{show:true}
 	}
   ]
 })

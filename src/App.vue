@@ -26,6 +26,7 @@
 				<router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
 				<router-link to="/ba">叭叭叭叭叭</router-link>
 				<router-link to="/jiu">啾啾啾啾啾</router-link>
+				<router-link to="/shi">施氏食狮史</router-link>
 			</div>
 		</aside>
 		<main>
