@@ -6,7 +6,7 @@
 				 background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" >
 
 					<el-menu-item index="1"><a> <i class="el-icon-rank" @click='toggleFullScreen'></i></a></el-menu-item>
-					<el-menu-item index="2"><a>订单管理</a></el-menu-item>
+					<el-menu-item index="2"><a> <i class="el-icon-refresh" @click='shuaxin'></i></a></el-menu-item>
 					<el-submenu index="3" style='float: right;'>
 						<template slot="title">系统操作</template>
 						<el-menu-item index="3-1" @click="zhuxiao">注销退出</el-menu-item>
@@ -15,7 +15,7 @@
 				</el-menu>
 			</div>
 		</header>
-		<aside id="side" v-show="$route.meta.show">
+		<aside id="side" v-show="$route.meta.show" >
 			<div id="nav">
 				<router-link to="/yi">壹壹壹壹壹</router-link>
 				<router-link to="/er">贰贰贰贰贰</router-link>
@@ -29,13 +29,12 @@
 				<router-link to="/shi">施氏食狮史</router-link>
 			</div>
 		</aside>
-		<main>
+		<main ref="mainContent">
 			<router-view />
 		</main>
 	
 	</div>
 </template>
-
 
 <style lang="scss" scoped>
 	::-webkit-scrollbar {
@@ -97,6 +96,9 @@
 			}
 		},
 		methods: {
+			shuaxin() {
+				location.reload()
+			},
 			zhuxiao() {
 				removeToken()
 				this.$router.push({

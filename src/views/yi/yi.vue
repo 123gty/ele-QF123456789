@@ -2,47 +2,36 @@
 	<div id="hello">
 		<div class="yi">
 			<el-row>
-				<el-col :span="18">
+				<el-col :span="12">
 					<div class="grid-content bg-purple">
 						<div id="main" style="width: 100%;height:100%;"></div>
 					</div>
 				</el-col>
-				<el-col :span="6">
+				<el-col :span="12">
 					<div class="grid-content bg-purple-light">
-						<div id="maina" style="width: 100%;height:100%;"></div>
+							<!-- <div id="maina" style="width: 100%;height:100%;"></div> -->
+								<editor-bar v-if="true" v-model="pageInfo"></editor-bar>
 
 					</div>
 				</el-col>
 			</el-row>
 		</div></br>
-		<div class="yi">
-			<el-row>
-				<el-col :span="18">
-					<div class="grid-content bg-purple">
-						<div id="main" style="width: 100%;height:100%;"></div>
-					</div>
-				</el-col>
-				<el-col :span="6">
-					<div class="grid-content bg-purple-light">
-						<div id="maina" style="width: 100%;height:100%;"></div>
-
-					</div>
-				</el-col>
-			</el-row>
-		</div></br>
-
+		
+  <!-- <tinymce v-if="true" v-model="pageInfo" :height="300" /> -->
 	</div>
 </template>
 
-<script>
-
+<script> 
 	const CryptoJS = require('crypto-js');
 	const key = CryptoJS.enc.Utf8.parse("5d85dadfe4b0e2e391c489de"); //十六位十六进制数作为密钥
 	const iv = CryptoJS.enc.Utf8.parse(''); //十六位十六进制数作为密钥偏移量pointerShapeBuilder
 	import echarts from 'echarts';
+	import Tinymce from '@/components/Tinymce';//富文本编辑
+import EditorBar from '@/components/WangEditor'
 	export default {
 		data() {
 			return {
+				pageInfo:"",
 				"shuju": [{
 						"shijian": "2016-05-02",
 						"name": "王1虎",
@@ -61,6 +50,10 @@
 				]
 			}
 		},
+		components: {
+		   Tinymce,
+		   EditorBar
+		 },
 		created() {
 			console.log(this.Encrypt("我的密码"))
 		},
@@ -82,7 +75,7 @@
 			var colors = ['red', 'blue', 'green'];
 			var myChart = echarts.init(document.getElementById('main'));
 			myChart.setOption({
-				title: { //标题
+				title: { //标题getAttribute
 					text: '壹壹壹壹壹壹壹壹壹',
 					// top:'20%',//标题margin
 				},
