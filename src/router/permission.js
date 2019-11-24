@@ -4,7 +4,12 @@ import { message } from 'element-ui'
   var isLogin = 1
 router.beforeEach((to, from, next) => {
     if (getToken()=="mvsAN47Rso/tk+750W/XKw==") {
+		if ( to.path === '/login') {
+			next('/yi')
+		} else{
 			next()
+		}
+			
 			
     } else {
         if (to.path === '/login') { //这就是跳出循环的关键

@@ -23,7 +23,7 @@
 
 <script> 
 	const CryptoJS = require('crypto-js');
-	const key = CryptoJS.enc.Utf8.parse("5d85dadfe4b0e2e391c489de"); //十六位十六进制数作为密钥
+	const key = CryptoJS.enc.Utf8.parse("5d85dadfe4b0e2e391c489de"); //十六位十六进制数作为密钥getAttribute
 	const iv = CryptoJS.enc.Utf8.parse(''); //十六位十六进制数作为密钥偏移量pointerShapeBuilder
 	import echarts from 'echarts';
 	import Tinymce from '@/components/Tinymce';//富文本编辑
@@ -180,93 +180,93 @@ import EditorBar from '@/components/WangEditor'
 			})
 
 
-			var myCharta = echarts.init(document.getElementById('maina'));
-			myCharta.setOption({
-				//  backgroundColor: '#2c343c',
-
-				title: {
-					text: 'Customized Pie',
-					left: 'center',
-					top: 20,
-					textStyle: {
-						color: '#ccc'
-					}
-				},
-
-				tooltip: {
-					trigger: 'item',
-					formatter: "{a} <br/>{b} : {c} ({d}%)"
-				},
-
-				visualMap: {
-					show: false,
-					min: 80,
-					max: 600,
-					inRange: {
-						colorLightness: [0, 1]
-					}
-				},
-				series: [{
-					name: '访问来源',
-					type: 'pie',
-					radius: '55%',
-					center: ['50%', '50%'],
-					data: [{
-							value: 335,
-							name: '直接访问'
-						},
-						{
-							value: 310,
-							name: '邮件营销'
-						},
-						{
-							value: 274,
-							name: '联盟广告'
-						},
-						{
-							value: 235,
-							name: '视频广告'
-						},
-						{
-							value: 400,
-							name: '搜索引擎'
-						}
-					].sort(function(a, b) {
-						return a.value - b.value;
-					}),
-					roseType: 'radius',
-					label: {
-						normal: {
-							textStyle: {
-								color: 'rgba(255, 255, 255, 0.3)'
-							}
-						}
-					},
-					labelLine: {
-						normal: {
-							lineStyle: {
-								color: 'rgba(255, 255, 255, 0.3)'
-							},
-							smooth: 0.2,
-							length: 10,
-							length2: 20
-						}
-					},
-					itemStyle: {
-						normal: {
-							color: '#c23531',
-							shadowBlur: 200,
-							shadowColor: 'rgba(0, 0, 0, 0.5)'
-						}
-					},
-
-					animationType: 'scale',
-					animationEasing: 'elasticOut',
-					animationDelay: function(idx) {
-						return Math.random() * 200;
-					}
-				}]
-			})
+// 			var myCharta = echarts.init(document.getElementById('maina'));
+// 			myCharta.setOption({
+// 				//  backgroundColor: '#2c343c',
+// 
+// 				title: {
+// 					text: 'Customized Pie',
+// 					left: 'center',
+// 					top: 20,
+// 					textStyle: {
+// 						color: '#ccc'
+// 					}
+// 				},
+// 
+// 				tooltip: {
+// 					trigger: 'item',
+// 					formatter: "{a} <br/>{b} : {c} ({d}%)"
+// 				},
+// 
+// 				visualMap: {
+// 					show: false,
+// 					min: 80,
+// 					max: 600,
+// 					inRange: {
+// 						colorLightness: [0, 1]
+// 					}
+// 				},
+// 				series: [{
+// 					name: '访问来源',
+// 					type: 'pie',
+// 					radius: '55%',
+// 					center: ['50%', '50%'],
+// 					data: [{
+// 							value: 335,
+// 							name: '直接访问'
+// 						},
+// 						{
+// 							value: 310,
+// 							name: '邮件营销'
+// 						},
+// 						{
+// 							value: 274,
+// 							name: '联盟广告'
+// 						},
+// 						{
+// 							value: 235,
+// 							name: '视频广告'
+// 						},
+// 						{
+// 							value: 400,
+// 							name: '搜索引擎'
+// 						}
+// 					].sort(function(a, b) {
+// 						return a.value - b.value;
+// 					}),
+// 					roseType: 'radius',
+// 					label: {
+// 						normal: {
+// 							textStyle: {
+// 								color: 'rgba(255, 255, 255, 0.3)'
+// 							}
+// 						}
+// 					},
+// 					labelLine: {
+// 						normal: {
+// 							lineStyle: {
+// 								color: 'rgba(255, 255, 255, 0.3)'
+// 							},
+// 							smooth: 0.2,
+// 							length: 10,
+// 							length2: 20
+// 						}
+// 					},
+// 					itemStyle: {
+// 						normal: {
+// 							color: '#c23531',
+// 							shadowBlur: 200,
+// 							shadowColor: 'rgba(0, 0, 0, 0.5)'
+// 						}
+// 					},
+// 
+// 					animationType: 'scale',
+// 					animationEasing: 'elasticOut',
+// 					animationDelay: function(idx) {
+// 						return Math.random() * 200;
+// 					}
+// 				}]
+// 			})
 		}
 
 
