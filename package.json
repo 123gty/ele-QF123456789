@@ -21,7 +21,7 @@
     "vue-totop": "^1.0.3",
     "vuex": "^3.0.1",
     "wangeditor": "^3.1.1",
-	"vue-fontawesome-elementui-icon-picker": "^0.1.0"
+    "vue-fontawesome-elementui-icon-picker": "^0.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
