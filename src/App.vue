@@ -20,7 +20,7 @@
 				<router-link to="/yi">壹壹壹壹壹</router-link>
 				<router-link to="/er">贰贰贰贰贰</router-link>
 				<router-link to="/san">叁叁叁叁叁</router-link>
-				<router-link to="/si">肆肆肆肆肆</router-link>
+				<router-link to="/aaa">肆肆肆肆肆</router-link>
 				<router-link to="/wu">伍伍伍伍伍</router-link>
 				<router-link to="/liu">陆陆陆陆陆</router-link>
 				<router-link to="/qi">嘁嘁嘁嘁嘁</router-link>
@@ -28,6 +28,7 @@
 				<router-link to="/jiu">啾啾啾啾啾</router-link>
 				<router-link to="/aaa">递归</router-link>
 				<router-link to="/bbb">递归2</router-link>
+				<router-link to="/ccc">角色授权</router-link>
 			</div>
 		</aside>
 		<main>

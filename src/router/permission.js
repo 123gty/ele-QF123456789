@@ -1,7 +1,6 @@
 import router from './router'
 import { message } from 'element-ui'
   import { getToken } from '@/utils/auth'
-  var isLogin = 1
 router.beforeEach((to, from, next) => {
     if (getToken()=="mvsAN47Rso/tk+750W/XKw==") {
 		if ( to.path === '/login') {

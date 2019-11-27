@@ -95,6 +95,11 @@ export default new Router({
 	  name: 'bbb',
 	  component: () => import( '../views/bbb/bbb.vue'),
 	  meta:{show:true}
+	},{
+	  path: '/ccc',
+	  name: 'ccc',
+	  component: () => import( '../views/ccc/ccc.vue'),
+	  meta:{show:true}
 	}
   ]
 })

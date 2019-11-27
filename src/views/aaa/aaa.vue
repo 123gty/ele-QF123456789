@@ -169,7 +169,7 @@
 
 		&>a {
 			background-color: #A7C4D7;
-			background-image: linear-gradient(120deg, #ebeff8 10%, #bde9f8 70%);
+			background-image: linear-gradient(120deg, red 10%, #bde9f8 70%);
 			background-size: 100% 100%;
 			padding: 10px;
 			box-sizing: border-box;

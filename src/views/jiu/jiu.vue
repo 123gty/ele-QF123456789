@@ -63,69 +63,40 @@
 			 :total="pageTotal">
 			</el-pagination>
 			<!-- 新增编辑 -->
-			<!-- 	 <el-dialog 
+			 <el-dialog 
 			    :visible.sync="isVisible"
-			    :title="addFundDialog.title" 
+			    title="新增" 
 			    :close-on-click-modal='false'
 			    :close-on-press-escape='false'
 			    :modal-append-to-body="false"
-			    @close="closeDialog">
+			    >
 			    <div class="form">
 			        <el-form 
 			            ref="form" 
-			            :model="form"
-			            :rules="form_rules"
-			            :label-width="dialog.formLabelWidth" 
-			            style="margin:10px;width:auto;">
-			            <el-form-item label="收支类型:" >
-			                <el-select v-model="form.incomePayType" placeholder="收支类型">
-			                    <el-option
-			                        v-for="item in payType"
-			                        :key="item.value"
-			                        :label="item.label"
-			                        :value="item.value">
-			                    </el-option>
-			                </el-select>
-			            </el-form-item>
-			
+			            :rules="formRules"
+			            label-width="100px" >
 			            <el-form-item prop='username' label="用户名:">
-			                <el-input type="text" v-model="form.username"></el-input>
+			                <el-input type="text" v-model="tableData.username"></el-input>
 			            </el-form-item>
-			            
-			             <el-form-item  prop='address' label="籍贯:">
-			                <el-cascader
-			                    placeholder="请选择地区"
-			                    v-model="form.address"
-			                    :props="{ expandTrigger: 'hover'}"
-			                    :options="areaData"
-			                    @change="handleChange">
-			                </el-cascader>
-			            </el-form-item>
-			
 			            <el-form-item prop='income'  label="收入:">
-			                <el-input v-model.number="form.income"></el-input>
+			                <el-input v-model.number="tableData.income"></el-input>
 			            </el-form-item>
-			
 			            <el-form-item prop='pay' label="支出:">
-			                <el-input v-model.number="form.pay"></el-input>
+			                <el-input v-model.number="tableData.pay"></el-input>
 			            </el-form-item>
-			
 			            <el-form-item prop='accoutCash' label="账户现金:">
-			                <el-input v-model.number="form.accoutCash"></el-input>
+			                <el-input v-model.number="tableData.accoutCash"></el-input>
 			            </el-form-item>
-			
 			                <el-form-item label="备注:">
-			                <el-input type="textarea" v-model="form.remarks"></el-input>
+			                <el-input type="textarea" v-model="tableData.remarks"></el-input>
 			            </el-form-item>
-			
 			            <el-form-item  class="text_right">
 			                <el-button @click="isVisible = false">取 消</el-button>
-			                <el-button type="primary" @click='onSubmit("form")'>提  交</el-button>
+			                <el-button type="primary" @click='onSubmit'>提  交</el-button>
 			            </el-form-item>
-			
 			        </el-form>
 			    </div>
-			</el-dialog> -->
+			</el-dialog>
 		</div>
 	</div>
 </template>
@@ -143,9 +114,9 @@
 			return {
 				fontsize: "small",
 				search_data: {
-					startTime: '',
-					endTime: '',
-					name: ''
+					startTime: null,
+					endTime: null,
+					name: null
 				},
 				isFlag: false, //批量删除显示
 				tableData: [], //主内容
@@ -153,7 +124,7 @@
 				loading: false,
 				idFlag: false,
 				isShow: false, // 是否显示资金modal,默认为falsepagination
-				editid: '',
+				editid: null,
 				rowIds: [],
 				sortnum: 0,
 				format_type_list: {
@@ -174,7 +145,7 @@
 				incomePayData: {
 					page: 1,
 					limit: 10,
-					name: ''
+					name: null
 				},
 				pageTotal: 0,
 				// 用于列表筛选
@@ -213,8 +184,12 @@
 						}
 					},
 				},
-				xiangshu: "0"
-
+				xiangshu: "0",
+				// 新增
+				isVisible:false,
+				formRules:{
+					name:[{}]
+				}
 			}
 		},
 		created() {
@@ -245,8 +220,10 @@
 					this.tableData = res.data.moneyList
 				})
 			},
-			// 添加
-			onAddMoney() {},
+			// 添加payType
+			onAddMoney() {
+				this.isVisible = true
+			},
 			// 上下分页
 			handleCurrentChange(val) {
 				this.incomePayData.page = val;
@@ -324,6 +301,9 @@
 				} else {
 					this.isFlag = true;
 				}
+			},
+			onSubmit(e){
+				console.log(e)
 			}
 		},
 	}

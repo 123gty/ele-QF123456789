@@ -1,12 +1,11 @@
 module.exports = {
     devServer:{
        proxy:{
-            // "/":{
-            //     target:"http://10.0.14.136:8881",
-            //     changeOrigin:true
-            // },
-			
-			
+            "/user":{
+                target:"http://106.13.31.92:8006",
+                changeOrigin:true
+            },
+			// http://106.13.31.92:8006/user/Test/test/
        }
     },
 }
